@@ -1,0 +1,21 @@
+.column {
+  display: flex;
+  flex-direction: column;
+}
+.mb {
+  margin-bottom: 10px;
+}
+.new-profile {
+  padding: 50px;
+  width: 30%;
+  .input-field {
+    height: 35px;
+    width: 250px;
+    border-radius: 4px;
+    border: 1px solid black;
+  }
+  .add-btn {
+    width: max-content;
+    padding: 5px 15px;
+  }
+}

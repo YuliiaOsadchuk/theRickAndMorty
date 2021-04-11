@@ -1,0 +1,38 @@
+.profile-details-page {
+  background-color: darkgray;
+  padding: 100px;
+  .profile-details {
+    width: 40%;
+    display: flex;
+    justify-content: center;
+    .character-info {
+      background-color: #3c3d44;
+      .image {
+        width: 220px;
+      }
+      .name {
+        font-family: "Nunito";
+        font-style: normal;
+        font-weight: bold;
+        font-size: 32px;
+        color: #ffffff;
+      }
+      .status {
+        font-family: "Nunito";
+        font-style: normal;
+        font-weight: bold;
+        font-size: 26px;
+        color: #ffffff;
+      }
+    }
+  }
+  .episodes {
+    .episodes-list {
+      font-family: "Nunito";
+      font-style: normal;
+      font-weight: bold;
+      font-size: 18px;
+      color: #000000;
+    }
+  }
+}

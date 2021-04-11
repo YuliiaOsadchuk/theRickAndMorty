@@ -1,0 +1,36 @@
+label {
+  font-family: "Nunito";
+  font-style: normal;
+  font-size: 16px;
+  color: #000000;
+}
+
+p {
+  font-family: "Nunito";
+  font-style: normal;
+  font-size: 20px;
+  font-weight: 600;
+  color: #000000;
+}
+
+.filter-panel {
+  display: flex;
+  flex-direction: row;
+  border: 1px solid grey;
+  border-radius: 8px;
+  padding: 10px;
+  .filter {
+    padding: 10px 20px;
+    .input-choices {
+      display: flex;
+      flex-direction: column;
+    }
+    .btn-submit {
+      font-family: "Nunito";
+      font-style: normal;
+      font-size: 14px;
+      color: #000000;
+      padding: 5px 10px;
+    }
+  }
+}

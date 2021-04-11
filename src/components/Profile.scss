@@ -1,0 +1,48 @@
+.column {
+  display: flex;
+  flex-direction: column;
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+}
+
+.character {
+  width: 500px;
+  height: 260px;
+  margin-bottom: 20px;
+  .image {
+    img {
+      width: 260px;
+      height: 260px;
+    }
+  }
+  .character-info {
+    width: 100%;
+    padding: 15px 20px;
+    background-color: #3c3d44;
+    .name {
+      font-family: "Nunito";
+      font-style: normal;
+      font-weight: bold;
+      font-size: 26px;
+      color: #ffffff;
+    }
+  }
+  .general-info {
+    padding: 5px 0;
+  }
+  .title {
+    font-family: "Nunito";
+    font-style: normal;
+    font-size: 20px;
+    color: #9e9d9e;
+  }
+  .text {
+    font-family: "Nunito";
+    font-style: normal;
+    font-size: 22px;
+    color: #ffffff;
+  }
+}

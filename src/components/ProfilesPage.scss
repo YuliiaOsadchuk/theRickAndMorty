@@ -1,0 +1,16 @@
+.row {
+  display: flex;
+  flex-direction: row;
+}
+.add-btn {
+  padding: 5px 10px;
+}
+
+.page {
+  padding: 100px 180px;
+  background-color: #24282f;
+  .characters {
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+}
