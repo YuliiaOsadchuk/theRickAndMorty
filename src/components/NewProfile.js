@@ -6,16 +6,23 @@ import "./NewProfile.scss";
 const GENDER_OPTIONS = ["Male", "Female", "Genderless", "Unknown"];
 
 const NewProfile = ({ onSave }) => {
-  const renderGenderOptions = (gender) => (
-    <label>
-      <Field type="radio" name="gender-choice" value={gender} checked />
-      {gender}
-    </label>
-  );
+  const renderGenderOptions = () =>
+    GENDER_OPTIONS.map((gender) => (
+      <label>
+        <Field type="radio" name="gender" value={gender} />
+        {gender}
+      </label>
+    ));
 
   return (
     <Formik
-      initialValues={{ name: "", email: "", gender: "male", photoUrl: "" }}
+      initialValues={{
+        name: "",
+        email: "",
+        gender: "Unknown",
+        photoUrl:
+          "https://png.pngtree.com/png-vector/20190704/ourlarge/pngtree-businessman-user-avatar-free-vector-png-image_1538405.jpg",
+      }}
       onSubmit={onSave}
       validationSchema={Yup.object().shape({
         name: Yup.string().required("This field is Required"),
@@ -23,9 +30,7 @@ const NewProfile = ({ onSave }) => {
         photoUrl: Yup.string().required("This field is Required"),
       })}
     >
-      {(props) => {
-        const { values, touched, errors } = props;
-
+      {({ touched, errors }) => {
         return (
           <Form>
             <div className="new-profile column">
@@ -37,25 +42,25 @@ const NewProfile = ({ onSave }) => {
                 placeholder="Enter name"
                 className={
                   errors.name && touched.name
-                    ? "text-input error input-field mb"
-                    : "text-input input-field mb"
+                    ? "input-field error"
+                    : "input-field mb"
                 }
               />
               {errors.name && touched.name && (
-                <div className="input-feedback">{errors.name}</div>
+                <div className="input-error-label">{errors.name}</div>
               )}
               <Field
                 className={
                   errors.email && touched.email
-                    ? "text-input error input-field mb"
-                    : "text-input input-field mb"
+                    ? "input-field error"
+                    : "input-field mb"
                 }
                 name="email"
                 type="email"
                 placeholder="Enter email address"
               />
               {errors.email && touched.email && (
-                <div className="input-feedback">{errors.email}</div>
+                <div className="input-error-label">{errors.email}</div>
               )}
               <Field
                 name="photoUrl"
@@ -63,14 +68,14 @@ const NewProfile = ({ onSave }) => {
                 placeholder="Enter photoUrl"
                 className={
                   errors.photoUrl && touched.photoUrl
-                    ? "text-input error input-field mb"
-                    : "text-input input-field mb"
+                    ? "input-field error"
+                    : "input-field mb"
                 }
               />
               {errors.photoUrl && touched.photoUrl && (
-                <div className="input-feedback">{errors.email}</div>
+                <div className="input-error-label">{errors.photoUrl}</div>
               )}
-              {GENDER_OPTIONS.map((gender) => renderGenderOptions(gender))}
+              <div className="gender-selector">{renderGenderOptions()}</div>
               <div className="mb" />
               <button className="add-btn" type="submit">
                 Add

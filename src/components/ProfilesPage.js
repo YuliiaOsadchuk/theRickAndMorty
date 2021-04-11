@@ -2,7 +2,6 @@ import React, { useEffect, useState, useContext } from "react";
 import { useHistory } from "react-router-dom";
 import ThemeContext from "./ThemeContext";
 import FilterPanel from "./FilterPanel";
-import Header from "./Header";
 import Pagination from "./Pagination";
 import Profile from "./Profile";
 import "./ProfilesPage.scss";
@@ -56,17 +55,18 @@ const ProfilesPage = () => {
 
   return (
     <>
-      <Header />
       <FilterPanel
         onStatusChange={handleStatusChange}
         onGenderChange={handleGenderChange}
       />
-      <button
-        className="add-btn"
-        onClick={() => history.push("/newProfilePage")}
-      >
-        Add Character
-      </button>
+      <div className="add-btn-container">
+        <button
+          className="add-btn"
+          onClick={() => history.push("/newProfilePage")}
+        >
+          Add Character
+        </button>
+      </div>
       <div className="page" style={{ backgroundColor: theme.background }}>
         <div className="row characters">
           {profiles?.map((profile) => (

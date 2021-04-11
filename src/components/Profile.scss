@@ -8,7 +8,15 @@
   flex-direction: row;
 }
 
-.character {
+.truncate {
+  width: 200px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.profile {
+  cursor: pointer;
   width: 500px;
   height: 260px;
   margin-bottom: 20px;
@@ -22,8 +30,8 @@
     width: 100%;
     padding: 15px 20px;
     background-color: #3c3d44;
+    overflow: hidden;
     .name {
-      font-family: "Nunito";
       font-style: normal;
       font-weight: bold;
       font-size: 26px;
@@ -34,13 +42,11 @@
     padding: 5px 0;
   }
   .title {
-    font-family: "Nunito";
     font-style: normal;
     font-size: 20px;
     color: #9e9d9e;
   }
   .text {
-    font-family: "Nunito";
     font-style: normal;
     font-size: 22px;
     color: #ffffff;

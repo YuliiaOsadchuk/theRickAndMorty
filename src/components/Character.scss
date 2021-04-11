@@ -1,0 +1,30 @@
+.character {
+  cursor: pointer;
+  height: 260px;
+  margin-bottom: 20px;
+  padding: 20px;
+  width: 700px;
+  .image {
+    img {
+      width: 260px;
+      height: 260px;
+    }
+  }
+  .character-info {
+    width: 100%;
+    padding: 15px 20px;
+    background-color: #3c3d44;
+    overflow: hidden;
+    .name {
+      font-style: normal;
+      font-weight: bold;
+      font-size: 26px;
+      color: #ffffff;
+    }
+    .text {
+      font-style: normal;
+      font-size: 22px;
+      color: #ffffff;
+    }
+  }
+}

@@ -18,7 +18,7 @@ const Pagination = ({ currentPage, pageCount, onPageChange }) => {
       >
         Prev
       </button>
-      <button className="btn">{currentPage}</button>
+      <button className="btn current-page">{currentPage}</button>
       <button
         className="btn"
         disabled={currentPage === pageCount}

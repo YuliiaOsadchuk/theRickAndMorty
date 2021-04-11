@@ -9,12 +9,12 @@ const FilterPanel = ({ onStatusChange, onGenderChange }) => {
     <div>
       <input
         type="radio"
-        id="statusChoice"
+        id={`${status}-status-choice`}
         name="status"
         value={status}
         onChange={onStatusChange}
       />
-      <label for="statusChoice">{status}</label>
+      <label for={`${status}-status-choice`}>{status}</label>
     </div>
   );
 
@@ -22,25 +22,25 @@ const FilterPanel = ({ onStatusChange, onGenderChange }) => {
     <div>
       <input
         type="radio"
-        id="genderChoice"
+        id={`${gender}-gender-choice`}
         name="gender"
         value={gender}
         onChange={onGenderChange}
       />
-      <label for="statusChoice">{gender}</label>
+      <label for={`${gender}-gender-choice`}>{gender}</label>
     </div>
   );
 
   return (
     <div className="filter-panel">
       <div className="filter">
-        <p>Select characters status:</p>
+        <span className="filter-label">Select characters status:</span>
         <div className="input-choices">
           {STATUS_OPTIONS.map((status) => renderStatusFilter(status))}
         </div>
       </div>
       <div className="filter">
-        <p>Select characters gender:</p>
+        <span className="filter-label">Select characters gender:</span>
         <div className="input-choices">
           {GENDER_OPTIONS.map((gender) => renderGenderFilter(gender))}
         </div>

@@ -5,6 +5,7 @@ import {
   Route,
   Redirect,
 } from "react-router-dom";
+import Header from "./components/Header";
 import NewProfilePage from "./components/NewProfilePage";
 import ProfilesPage from "./components/ProfilesPage";
 import ProfileDetailsPage from "./components/ProfileDetailsPage";
@@ -14,13 +15,11 @@ import "./App.scss";
 
 const themes = {
   light: {
-    name: "light",
-    foreground: "#000000",
-    background: "#eeeeee",
+    color: "#222222",
+    background: "#ffffff",
   },
   dark: {
-    name: "dark",
-    foreground: "#ffffff",
+    color: "#ffffff",
     background: "#222222",
   },
 };
@@ -46,21 +45,30 @@ const App = () => {
 
   return (
     <ThemeContext.Provider value={themes[currentTheme]}>
-      <div className="switch">
-        <input type="checkbox" id="switch" onChange={handleThemeChange} />
-        <label for="switch">Toggle</label>
+      <div className="theme-container" style={themes[currentTheme]}>
+        <div className="switch">
+          <span className="theme-label">Change theme</span>
+          <input
+            type="checkbox"
+            checked={currentTheme === "light"}
+            id="switch"
+            onChange={handleThemeChange}
+          />
+          <label for="switch">Toogle</label>
+        </div>
+        <Header />
+        <Router>
+          <Switch>
+            <Route path="/home" component={ProfilesPage}></Route>
+            <Route
+              path="/:profileId/profileDetails"
+              component={ProfileDetailsPage}
+            ></Route>
+            <Route path="/newProfilePage" component={NewProfilePage}></Route>
+            <Redirect to="/home" />
+          </Switch>
+        </Router>
       </div>
-      <Router>
-        <Switch>
-          <Route path="/home" component={ProfilesPage}></Route>
-          <Route
-            path="/:profileId/profileDetails"
-            component={ProfileDetailsPage}
-          ></Route>
-          <Route path="/newProfilePage" component={NewProfilePage}></Route>
-          <Redirect to="/home" />
-        </Switch>
-      </Router>
     </ThemeContext.Provider>
   );
 };
