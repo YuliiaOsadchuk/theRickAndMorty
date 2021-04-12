@@ -1,9 +1,6 @@
 .pagination {
-  width: 35%;
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
-  padding-top: 30px;
   .btn {
     cursor: pointer;
     font-size: 18px;
@@ -12,6 +9,7 @@
     background-color: #3e4248;
     border-radius: 4px;
     outline: none;
+    margin: 3px;
     &:disabled {
       background-color: #cccccc;
     }

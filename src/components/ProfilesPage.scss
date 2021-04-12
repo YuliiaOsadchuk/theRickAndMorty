@@ -19,10 +19,14 @@
 }
 
 .page {
-  padding: 30px 180px;
+  padding: 30px 0px;
   background-color: #24282f;
   .characters {
-    justify-content: space-between;
+    justify-content: center;
     flex-wrap: wrap;
+  }
+  .pagination-container {
+    justify-content: flex-end;
+    padding: 10px;
   }
 }

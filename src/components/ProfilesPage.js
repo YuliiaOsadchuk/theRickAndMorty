@@ -73,11 +73,13 @@ const ProfilesPage = () => {
             <Profile {...profile} onProfileClick={handleProfileClick} />
           ))}
         </div>
-        <Pagination
-          currentPage={currentPage}
-          pageCount={pageInfo?.pages}
-          onPageChange={handlePageChange}
-        />
+        <div className="row pagination-container">
+          <Pagination
+            currentPage={currentPage}
+            pageCount={pageInfo?.pages}
+            onPageChange={handlePageChange}
+          />
+        </div>
       </div>
     </>
   );
